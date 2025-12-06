@@ -1,0 +1,236 @@
+:root{
+  --bg:#e9e6e2;         /* warm light gray page background from screenshots */
+  --accent:#1f9b44;     /* green used for CTA and accent */
+  --text:#0a0a0a;
+  --muted:#6b6b6b;
+  --max-width:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Merriweather", Georgia, serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* header */
+.site-header{
+  padding:18px 36px; /* reduced top-bar vertical padding to bring content closer */
+}
+.header-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{height:56px}
+.logo{height:96px}
+
+/* social icons simple sizing */
+.social img{height:20px;margin-left:18px;opacity:.95}
+/* larger linked icons in header */
+.site-header .social a{display:inline-block;margin-left:16px}
+.site-header .social img{height:30px;margin-left:0;opacity:.98}
+
+/* full-width banner (screenshot 2) */
+.banner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:4px 0 12px; /* further tightened spacing between header and banner text */
+}
+.banner-link{display:block;position:relative;width:86%;max-width:1200px;margin:0 auto}
+.banner img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:2px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.03);
+  transition:transform .22s ease, filter .18s ease; /* smooth hover */
+}
+
+/* banner link hover effect */
+.banner-link{display:inline-block;position:relative}
+.banner-link:hover img{transform:scale(1.02);filter:brightness(.98)}
+.banner-link:focus img{outline:2px solid rgba(31,155,68,0.25);outline-offset:4px}
+
+/* Steam badge overlay */
+.steam-badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(0,0,0,0.78);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:20px;
+  font-family:inherit;
+  font-weight:700;
+  font-size:13px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+.steam-badge svg{display:block;flex:0 0 auto}
+.steam-badge-text{display:block}
+
+/* reduce badge size on small screens */
+@media (max-width:880px){
+  .steam-badge{top:8px;right:8px;font-size:12px;padding:5px 8px}
+}
+@media (max-width:880px){
+  .banner-link{width:95%}
+}
+
+/* release note above banner art */
+.banner-note{
+  /* placed above the banner image (not overlay) */
+  font-family:"Playfair Display", serif;
+  font-weight:900;
+  font-size:44px;
+  color:var(--text); /* make text black */
+  text-shadow:0 3px 0 rgba(0,0,0,0.05);
+  letter-spacing:0.5px;
+  margin-bottom:8px; /* tightened spacing */
+  text-align:center;
+}
+
+/* main hero split layout */
+.hero{
+  max-width:var(--max-width);
+  margin:48px auto;
+  display:grid;
+  grid-template-columns: 1fr 560px;
+  gap:48px;
+  align-items:center;
+  padding:0 24px;
+}
+
+/* left image block */
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  gap:18px; /* spacing between the two screenshots */
+  align-items:center;
+}
+.hero-left img{
+  width:100%;
+  max-width:760px;
+  border-radius:2px;
+  display:block;
+  box-shadow:0 2px 0 rgba(0,0,0,0.03);
+  transform:translateY(0);
+}
+
+/* right content */
+.hero-right{
+  padding-right:24px;
+}
+.hero-right h1{
+  font-family:"Playfair Display", serif;
+  font-size:56px;
+  line-height:0.9;
+  margin:0 0 18px;
+  letter-spacing: -1px;
+  font-weight:900;
+  text-align:center; /* center the game icon inside the h1 */
+}
+
+/* Game logo inside the hero heading */
+.hero-right .game-logo{
+  display:block;
+  width:100%;
+  max-width:520px; /* increased so the logo is a bit larger */
+  height:auto;
+  margin:0 0 14px; /* spacing below logo */
+}
+
+/* center the CTA (wishlist) button inside the hero-right column */
+.hero-right .cta{
+  display:block;
+  width:fit-content;
+  margin:18px auto 0;
+}
+.lede{
+  color:var(--muted);
+  margin:0 0 36px;
+  font-size:16px;
+}
+
+/* green CTA */
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:18px 48px;
+  text-decoration:none;
+  border-radius:2px;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+
+/* footer layout */
+.site-footer{
+  margin-top:80px;
+  padding:28px 24px 64px;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:16px;
+}
+.footer-logo{height:112px;justify-self:start} /* increased per request */
+.footer-social{display:flex;gap:16px;justify-self:center}
+.footer-social a{display:inline-block}
+.footer-social img{height:30px;opacity:.98} /* match header icon size */
+.footer-contact{justify-self:end}
+.footer-contact a{
+  color:var(--accent);
+  font-weight:700;
+  font-size:20px;
+  text-decoration:none;
+}
+
+/* responsive rules */
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr 420px; gap:32px}
+  .hero-right h1{font-size:46px}
+}
+@media (max-width:880px){
+  .banner img{width:95%}
+  .banner-note{font-size:34px;margin-bottom:12px}
+  .hero{grid-template-columns:1fr; text-align:center}
+  .hero-right{padding:0}
+  .hero-right h1{font-size:44px;margin-top:18px}
+  .hero-left img{max-width:92%; margin:0 auto}
+  .footer-inner{grid-template-columns:1fr; text-align:center; gap:10px}
+  .footer-contact{order:3}
+  .footer-logo{justify-self:center}
+  .footer-social{justify-self:center}
+  /* reduce logo size on smaller screens */
+  .logo{height:64px}
+  /* reduce footer-left logo on medium screens */
+  .footer-logo{height:72px}
+  /* reduce hero logo size on medium screens */
+  .hero-right .game-logo{max-width:380px}
+}
+@media (max-width:420px){
+  .cta{padding:14px 26px}
+  .hero-right h1{font-size:34px}
+  .footer-contact a{font-size:16px}
+  .banner-note{font-size:22px;margin-bottom:10px}
+  .logo{height:48px}
+  .footer-logo{height:48px}
+  .hero-right .game-logo{max-width:260px}
+}

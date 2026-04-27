@@ -44,13 +44,15 @@ body{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:4px 0 12px; /* further tightened spacing between header and banner text */
+  padding:4px 24px 12px;
 }
-.banner-link{display:block;position:relative;width:86%;max-width:1200px;margin:0 auto}
+.banner-link{display:block;position:relative;width:100%;max-width:70%;margin:0 auto;aspect-ratio:16/9}
 .banner iframe{
-  height:auto;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
   display:block;
-  margin:0 auto;
   border-radius:2px;
   box-shadow:0 2px 0 rgba(0,0,0,0.03);
   transition:transform .22s ease, filter .18s ease; /* smooth hover */
@@ -83,9 +85,6 @@ body{
 /* reduce badge size on small screens */
 @media (max-width:880px){
   .steam-badge{top:8px;right:8px;font-size:12px;padding:5px 8px}
-}
-@media (max-width:880px){
-  .banner-link{width:95%}
 }
 
 /* release note above banner art */
@@ -207,7 +206,6 @@ body{
   .hero-right h1{font-size:46px}
 }
 @media (max-width:880px){
-  .banner iframe{width:95%}
   .banner-note{font-size:34px;margin-bottom:12px}
   .hero{grid-template-columns:1fr; text-align:center}
   .hero-right{padding:0}
